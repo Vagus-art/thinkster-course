@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 import Banner from './Banner';
 import MainView from './MainView';
 import { connect } from 'react-redux';
-import Articles from '../../agent';
+import agent from '../../agent';
 
 const Promise = global.Promise;
 
@@ -19,18 +19,13 @@ const mapDispatchToProps = dispatch => ({
 
 const Home = (props) => {
     useEffect(()=>{
-        props.onLoad(Articles.all());
-    },[props])
+        props.onLoad(agent.Articles.all());
+    })
     return (
         <div className="home-page">
             <div className="container page">
             <div className="row">
                 <MainView />
-                {props.articles.map(article=>{
-                    return(
-                        <p>{article}</p>
-                    )
-                })}
                 <div className="col-md-3">
                 <div className="sidebar">
 
@@ -44,4 +39,4 @@ const Home = (props) => {
     )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

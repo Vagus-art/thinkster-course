@@ -8,14 +8,14 @@ const mapStateToProps = state => ({
   appName : state.appName
 });
 
-function App(props) {
+const App = (props) => {
   return (
     <div>
       <Header appName={props.appName} />
       <Home />
       <h1>hello</h1>
-      </div>
+    </div>
   );
 }
 
-export default connect(mapStateToProps, ()=> ({})) (App);
+export default connect(mapStateToProps,()=>({}))(App);

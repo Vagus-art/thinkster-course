@@ -21,4 +21,4 @@ const MainView = props => {
     )
 }
 
-export default connect(mapStateToProps, ()=>({}) (MainView));
+export default connect(mapStateToProps, ()=>({}))(MainView);
